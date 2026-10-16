@@ -1,0 +1,13 @@
+Use case: product-mockup
+Asset type: Transparent cutout asset for an animated 3D printing brand landing page hero.
+Primary request: A photorealistic studio product lineup of SEVEN distinct small FDM 3D printed objects, isolated together on a genuinely transparent background. EXTREMELY WIDE panoramic composition, approximately 3:1 or wider. Seven evenly spaced object centers at approximately 8%,22%,36%,50%,64%,78%,92% of total image width; each object fits entirely inside its own 13%-wide imaginary vertical cell with ample clear space between objects. All seven objects sit on exactly the same horizontal baseline near the bottom. Entire objects visible, no clipping at image edges. No platforms, no table, no background. Very subtle grounding shadow only beneath each object; no overlapping shadows.
+Objects from LEFT TO RIGHT:
+1 a standing ivory polymer mechanical gear, clearly visible center hole and teeth;
+2 a graphite-gray modern open spiral sculpture, clean thick continuous twisting loop;
+3 an ivory tall sculptural twisted-ribbed vase, realistic narrow opening, tallest object;
+4 a warm-white cute low-poly sitting cat figurine, elegant geometric facets, recognizable ears and tail, no cartoon printed face;
+5 a graphite short ribbed planter pot with rounded body and open top, empty, no plant;
+6 an ivory clean desktop pen organizer with three cylindrical open compartments of staggered heights, empty, no pens;
+7 a warm-white woven lattice sphere sculpture with clearly visible holes, standing on a very small integrated base.
+Consistent scale: objects approximately 12 to 22 cm tall in a real studio, variation in heights, coordinated arrangement like an editorial design collection. Lighting: soft studio key from upper left, visible material texture and subtly layered FDM extrusion lines. Highly convincing real 3D printed plastic, matte surfaces, no glossy ceramic appearance. Restrained monochrome palette of warm ivory, white and charcoal only. Camera straight on with a slight elevated view showing openings, 85mm product photography feel, crisp silhouette, cutouts for web design.
+Constraints: exactly seven objects in the stated order and cells, no text, no logos, no labels, no lettering, no printer, no hands, no stand, no extra objects, no gradient or colored background. Actual alpha transparency required.

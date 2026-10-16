@@ -1,0 +1,53 @@
+
+/* A centered typographic stage, with independent prints across the foreground. */
+.header{height:88px;border-bottom:0;position:relative;z-index:10}
+.header .nav-cta{border-radius:30px;padding:12px 19px}
+.header nav{gap:35px}
+.showcase{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding:23px 0 0;min-height:calc(100svh - 88px);background:var(--paper)}
+.showcase-glow{position:absolute;inset:12% -10% -10%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 72%,#dedbd2 0%,#eae7df 26%,transparent 65%)}
+.showcase-intro{width:100%;text-align:center;z-index:2;position:relative}
+.showcase-eyebrow{font-size:9px;letter-spacing:2.2px;margin-bottom:16px}
+.showcase-logo{width:min(1100px,89%);margin:0 auto;font-size:0;line-height:0;letter-spacing:0}
+.showcase-logo img{width:100%;height:auto}
+.showcase-tagline{font-size:17px;letter-spacing:1.5px;line-height:1.3;margin-top:14px}
+.showcase-description{color:var(--muted);font-size:12px;line-height:1.6;margin-top:11px}
+.showcase-cta{display:inline-flex;align-items:center;gap:6px;color:#fff;font-size:12px;margin-top:23px;outline-offset:5px}
+.cta-copy{display:block;padding:17px 26px;background:#111;border-radius:40px}
+.cta-circle{display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:#111;font-size:24px;transition:transform 220ms var(--curve)}
+.showcase-cta:hover .cta-circle{transform:rotate(45deg)}
+.showcase-cta:active{transform:scale(.98)}
+.showcase-accent{position:absolute;top:48%;left:7.5%;transform:rotate(14deg);pointer-events:none;z-index:1}
+.showcase-accent img{width:39px;height:67px;opacity:.83}
+
+.printing-scene{width:100%;position:relative;height:clamp(230px,31vw,390px);margin-top:-8px;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;overscroll-behavior-inline:contain;flex:1 0 auto;-webkit-overflow-scrolling:touch}
+.printing-scene::-webkit-scrollbar{display:none}
+.printing-track{width:100%;height:100%;position:relative}
+.printing-track>svg,.pieces-fallback{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom}
+.pieces-fallback[hidden]{display:none}
+.printing-track svg{overflow:visible}
+.printing-track .piece-ghost{opacity:.055}
+.printing-track .print-head{pointer-events:none}
+.showcase-meta{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:10px 14px;font-size:9px;letter-spacing:.8px;position:relative;z-index:3}
+.print-status{display:flex;align-items:center;gap:9px}
+.print-status:before{content:"";width:5px;height:5px;border-radius:50%;background:#171717}
+.print-control{border:0;background:transparent;display:flex;align-items:center;gap:8px;font-size:10px;padding:8px 0;min-height:35px;color:var(--muted)}
+.print-control:disabled{visibility:hidden}
+.control-icon{display:grid;place-items:center;width:22px;height:22px;border:1px solid #a7a49a;border-radius:50%;font-size:11px;color:var(--ink);letter-spacing:-1px}
+.print-control:hover .control-label{text-decoration:underline;text-underline-offset:4px}
+.swipe-hint{display:none}
+.showcase-disclaimer{font-size:8px;color:var(--muted);letter-spacing:.5px;position:absolute;left:50%;bottom:24px;transform:translateX(-50%);pointer-events:none}
+.motion-ready .showcase-logo{animation:arrive 900ms 70ms var(--curve) both}
+.motion-ready .showcase-eyebrow{animation:arrive 650ms var(--curve) both}
+.motion-ready .showcase-tagline{animation:arrive 700ms 180ms var(--curve) both}
+.motion-ready .showcase-description{animation:arrive 650ms 280ms var(--curve) both}
+.motion-ready .showcase-cta{animation:arrive 650ms 370ms var(--curve) backwards}
+.motion-ready .showcase-accent,.motion-ready 
+.intro-complete .showcase-intro>*{animation:none!important}
+@keyframes stamp-arrive{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
+@media(min-width:1550px){.showcase-logo{width:min(1360px,86%)}.showcase{padding-top:30px}.showcase-tagline{font-size:20px;margin-top:18px}.showcase-description{font-size:13px}.showcase-cta{margin-top:26px}.printing-scene{height:360px}}
+@media(min-width:761px) and (max-height:760px){.showcase{padding-top:12px;min-height:calc(100svh - 80px)}.header{height:80px}.showcase-logo{width:min(990px,86%)}.showcase-eyebrow{margin-bottom:11px;font-size:8px}.showcase-tagline{margin-top:7px;font-size:15px}.showcase-description{margin-top:7px;font-size:11px}.showcase-cta{margin-top:16px}.cta-copy{padding:14px 22px}.cta-circle{width:44px;height:44px}.printing-scene{height:clamp(225px,33svh,300px);margin-top:0}.showcase-meta{padding-bottom:10px}.showcase-disclaimer{bottom:21px}}
+@media(max-width:1050px){.showcase-accent{left:5%;top:47%}.showcase-accent img{width:30px;height:51px}.showcase-logo{width:91%}.printing-scene{margin-top:15px}}
+@media(max-width:760px){.header{height:78px}.header nav{top:77px;gap:5px}.header .nav-cta{border-radius:30px;padding:13px 17px}.showcase{min-height:calc(100svh - 78px);padding-top:27px}.showcase-eyebrow{font-size:7px;letter-spacing:1.5px;margin-bottom:22px}.showcase-logo{width:calc(100% - 26px)}.showcase-tagline{font-size:12px;letter-spacing:.7px;line-height:1.5;margin-top:22px}.showcase-description{font-size:11px;margin:10px auto 0;max-width:240px;line-height:1.8}.showcase-cta{font-size:11px;margin-top:20px;gap:5px}.cta-copy{padding:15px 20px}.cta-circle{height:46px;width:46px;font-size:22px}.showcase-accent{top:44%;left:10%}.showcase-accent img{width:24px;height:42px}.printing-scene{height:290px;min-height:290px;margin-top:56px;flex-grow:1}.printing-track{width:850px;min-width:100%;height:100%}.showcase-meta{padding-block:10px 13px;gap:7px;font-size:7px;letter-spacing:.3px;flex-wrap:wrap}.print-control{font-size:8px;gap:5px}.control-icon{width:20px;height:20px}.swipe-hint{display:block;font-size:8px;color:var(--muted)}.print-status{width:100%;justify-content:center;order:3;margin-top:1px}.showcase-disclaimer{position:static;transform:none;font-size:7px;margin:0 0 13px}.showcase-glow{inset:18% -40% 0}.showcase-meta .print-control{margin-left:auto}}
+@media(max-width:760px) and (max-height:720px){.showcase{padding-top:15px}.showcase-eyebrow{margin-bottom:16px}.showcase-tagline{margin-top:15px}.showcase-cta{margin-top:15px}.printing-scene{height:230px;min-height:230px;margin-top:40px}.showcase-accent{top:44%}}
+@media(prefers-reduced-motion:reduce){.showcase-intro>*,.showcase-accent{animation:none!important}.cta-circle,.showcase-cta{transition:none!important;transform:none!important}.piece-ghost,.print-head{display:none!important}}
+

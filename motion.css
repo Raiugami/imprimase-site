@@ -1,0 +1,78 @@
+
+/* Motion language: a composition assembled layer by layer. */
+.title-mask{display:block;overflow:hidden;padding-block:.12em;margin-block:-.12em}
+.title-line{display:block}
+.print-reveal{display:none;position:absolute;inset:0;pointer-events:none;z-index:1;grid-template-rows:repeat(9,1fr)}
+.print-reveal>span{display:block;background:var(--paper);transform-origin:top}
+.image-topline,figcaption{z-index:2}
+.button{transition:transform 200ms var(--curve)}
+.button>span,.text-link>span,.nav-cta>span,.back-top>span{display:inline-block;transition:transform 220ms var(--curve)}
+@media(hover:hover) and (pointer:fine){
+  .button:hover{transform:translateY(-3px)}
+  .button:hover>span,.nav-cta:hover>span{transform:translate(3px,-3px)}
+  .text-link:hover>span,.back-top:hover>span{transform:translateY(3px)}
+  .back-top:hover>span{transform:translateY(-3px)}
+}
+.button:active{transform:scale(.98)}
+.header nav>a:not(.nav-cta){position:relative}
+.header nav>a:not(.nav-cta)::after{content:"";position:absolute;bottom:7px;left:0;right:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform 220ms var(--curve)}
+.header nav>a:not(.nav-cta):hover{text-decoration:none}
+.header nav>a:not(.nav-cta):hover::after{transform:scaleX(1)}
+.motion-ready .header{animation:arrive 550ms var(--curve) both}
+.motion-ready .hero-copy>.eyebrow{animation:arrive 600ms 80ms var(--curve) both}
+.motion-ready .title-line{animation:title-arrive 850ms 160ms var(--curve) both}
+.motion-ready .title-mask:nth-child(2) .title-line{animation-delay:290ms}
+.motion-ready h1 em::after{transform-origin:left;animation:draw-rule 650ms 800ms var(--curve) both}
+.motion-ready .hero-description{animation:arrive 650ms 380ms var(--curve) both}
+.motion-ready .hero-copy>.button{animation:arrive 600ms 480ms var(--curve) backwards}
+.motion-ready .hero-copy>.text-link{animation:arrive 600ms 560ms var(--curve) both}
+.motion-ready .hero-bottom{animation:arrive 650ms 620ms var(--curve) both}
+.motion-ready .print-reveal{display:grid}
+.motion-ready .print-reveal>span{animation:print-layer 650ms calc(100ms + var(--layer)*65ms) var(--curve) both}
+.motion-ready .product-photo{animation:photo-settle 1500ms 100ms var(--curve) both}
+.motion-ready .image-topline,.motion-ready figcaption{animation:arrive 650ms 650ms var(--curve) both}
+.reveal.will-reveal{opacity:0;transform:translateY(25px);filter:blur(2px);transition:opacity 650ms var(--curve),transform 750ms var(--curve),filter 650ms var(--curve);transition-delay:var(--reveal-delay,0ms)}
+.reveal.is-visible,.reveal:focus-within{opacity:1;transform:none;filter:none}
+.possibility,.steps li{border-top:0}
+.possibility::before,.steps li::before{content:"";display:block;position:absolute;left:0;right:0;top:0;height:1px;background:var(--ink);transform-origin:left;transition:transform 850ms var(--curve)}
+.steps li{position:relative}
+.steps li::before{background:#55544f}
+.motion-ready .will-reveal:not(.is-visible)::before{transform:scaleX(0)}
+.motion-ready .line-art>*{transition:opacity 450ms var(--curve),transform 650ms var(--curve);transition-delay:calc(150ms + var(--line-delay,0ms))}
+.motion-ready .will-reveal:not(.is-visible) .line-art>*{opacity:0;transform:translateX(15px)}
+.motion-ready .layer-signature span,.motion-ready .category-strip .wrap>span,.motion-ready .tags li{transition:opacity 500ms var(--curve),transform 650ms var(--curve);transition-delay:calc(120ms + var(--part-delay,0ms))}
+.motion-ready .will-reveal:not(.is-visible) .layer-signature span{opacity:0;transform:translateX(-35px)}
+.motion-ready .will-reveal:not(.is-visible) .tags li,.motion-ready .category-strip.will-reveal:not(.is-visible) .wrap>span{opacity:0;transform:translateY(10px)}
+.faq-list summary>span{transition:transform 200ms var(--curve)}
+.motion-ready .faq-list details[open] p{animation:arrive 300ms var(--curve) both}
+.motion-ready .brief-result:not([hidden]){animation:arrive 350ms var(--curve) both}
+.keyboard-mode .print-reveal{display:none}
+.intro-complete .print-reveal{display:none}
+.intro-complete .hero *,.intro-complete .header{animation:none!important}
+.keyboard-mode .brief-result,.keyboard-mode .faq-list details[open] p,.keyboard-mode .header nav.is-open{animation:none!important}
+.keyboard-mode .reveal:focus-within{opacity:1;transform:none;filter:none}
+html:has(.keyboard-mode){scroll-behavior:auto}
+@keyframes arrive{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes title-arrive{from{opacity:0;transform:translateY(75%)}to{opacity:1;transform:translateY(0)}}
+@keyframes draw-rule{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes print-layer{from{transform:scaleY(1)}to{transform:scaleY(0)}}
+@keyframes photo-settle{from{transform:scale(1.055)}to{transform:scale(1)}}
+@keyframes menu-arrive{from{opacity:0}to{opacity:1}}
+@media(max-width:760px){
+  .motion-ready .header nav.is-open{animation:menu-arrive 180ms var(--curve) both}
+  .motion-ready .product-photo{animation-duration:1150ms}
+  .reveal.will-reveal{filter:none;transform:translateY(18px);transition-duration:550ms,650ms,0ms}
+  .reveal.is-visible,.reveal:focus-within{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .print-reveal{display:none!important}
+  .reveal.will-reveal{opacity:1;transform:none;filter:none}
+  .motion-ready .will-reveal:not(.is-visible) .line-art>*,
+  .motion-ready .will-reveal:not(.is-visible) .layer-signature span,
+  .motion-ready .will-reveal:not(.is-visible) .tags li,
+  .motion-ready .category-strip.will-reveal:not(.is-visible) .wrap>span{opacity:1;transform:none}
+  .motion-ready .will-reveal:not(.is-visible)::before{transform:none}
+  .button:hover,.button:active{transform:none}
+}
+
