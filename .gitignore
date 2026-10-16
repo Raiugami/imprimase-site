@@ -1,0 +1,12 @@
+.versions/
+preview-*.jpg
+motion-audits/
+node_modules/
+.env
+.env.*
+.mcp.json
+*.log
+Orçamento*.pdf
+orcamentos/
+Thumbs.db
+.DS_Store
