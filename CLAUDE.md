@@ -20,6 +20,9 @@ O site usa HTML, CSS, JavaScript e SVG puros. Não há build, servidor de aplica
 - Exemplos personalizados usam **Rebecca**, não Ana. O logo usa curvas SVG; não o recriar por digitação nem substituir a fonte do desenho.
 - Sem preços inventados, avaliações inventadas ou promessas comerciais não confirmadas. Região de atendimento ainda não foi informada; não inventar cidade.
 
+
+- Miniatura de compartilhamento: `assets/logo-compartilhamento.png`, logo oficial preto sobre fundo creme em 1200 × 1200. Os metadados Open Graph e Twitter devem apontar para esse logo, não para fotos dos produtos. WhatsApp e redes podem manter prévias antigas em cache.
+
 ## Contatos e pendências
 
 Configuração central em `brand.config.js`:
